@@ -15,7 +15,11 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
         
-    }
+    },
+    avatar :{
+        type : String,
+        default : "https://images.app.goo.gl/Q1N5nixBbqyJJWNm8"
+    },
 } , {timestamps: true})
 
 const User = mongoose.model('User', userSchema)
