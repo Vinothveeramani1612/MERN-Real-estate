@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router-dom';
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-    const handleGoogleClick = async () => {
+    const handleGoogleClick = async (event) => {
         try {
+          event.preventDefault();          
             const provider = new GoogleAuthProvider()
             const auth = getAuth(app)
             const result = await signInWithPopup(auth, provider)
@@ -29,6 +30,7 @@ export default function OAuth() {
             
         } catch (error) {
             console.log('could not sign in with google', error)
+            
         }
     }
   return (
