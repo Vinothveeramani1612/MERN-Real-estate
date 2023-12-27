@@ -8,11 +8,15 @@ import Profile from './pages/Profile';
 import Header from './component/Header';
 import PrivateRoutes from './component/PrivateRoutes';
 
+
 export default function App() {
+
+
   return (
     <BrowserRouter>
     <Header />
     <Routes>
+                  
       <Route path='/' element= {<Home/>} />
       <Route path='/Sign-in' element= {<Signin/>} />
       <Route path='/Sign-up' element= {<Signup/>} />
@@ -20,9 +24,6 @@ export default function App() {
       <Route element = {<PrivateRoutes />}>
       <Route path='/profile' element= {<Profile/>} />
       </Route>
-      
-      
-
 
     </Routes>
     </BrowserRouter>
