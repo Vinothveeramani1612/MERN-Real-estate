@@ -6,7 +6,7 @@ import {
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
-import {app} from '../firebase'
+import { app } from "../firebase";
 import {
   updateUserStart,
   updateUserSuccess,
@@ -17,7 +17,8 @@ import {
   signOutUserFailure, signOutUserStart,signOutUserSuccess
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+
 
 export default function Profile() {
   const fileRef = useRef(null)
@@ -115,7 +116,9 @@ export default function Profile() {
         return;
       }
       dispatch(signOutUserSuccess(data));
+    
     } catch (error) {
+    
       dispatch(signOutUserFailure(data.message));
     }
   };
